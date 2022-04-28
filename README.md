@@ -1,5 +1,7 @@
 # AngularQuizApp
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a432d7a8-86d3-404a-97e8-ceeef0f19251/deploy-status)](https://app.netlify.com/sites/merry-druid-f13206/deploys)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.2.
 
 ## Development server
