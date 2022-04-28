@@ -33,4 +33,7 @@ export class QuestionComponent implements OnInit {
   previousQuestion(): void {
     this.currentQuestion--;
   }
+
+  
+
 }

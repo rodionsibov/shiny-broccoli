@@ -22,7 +22,7 @@
       </div>
       <!-- question remain -->
       <div>
-        <em>Question 1 of 9</em>
+        <em>Question {{ currentQuestion + 1 }} of {{ questionList.length }}</em>
       </div>
       <!-- timer -->
       <div>
@@ -48,19 +48,13 @@
     <!-- options -->
     <div>
       <ol>
-        <li>
-          <div class="card">Marry</div>
-        </li>
-        <li>
-          <div class="card">John</div>
-        </li>
-        <li>
-          <div class="card">Alex</div>
+        <li *ngFor="let option of questionList[currentQuestion]?.options">
+          <div class="card">{{ option.text }}</div>
         </li>
       </ol>
     </div>
     <div class="d-flex justify-content-between">
-      <button class="btn" (click)="previousQuestion()">
+      <button class="btn" (click)="previousQuestion()" [disabled]="currentQuestion === 0">
         <i class="fa-solid fa-chevron-left fa-2x text-primary"></i>
       </button>
       <button class="btn">
