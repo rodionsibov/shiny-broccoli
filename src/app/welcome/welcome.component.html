@@ -5,15 +5,21 @@
   </p>
   <h4>Rules:</h4>
   <ol>
-      <li>Correct Question gives you 10 points</li>
-      <li>Incorrect question gives you -10 points</li>
-      <li>You will have 10 sec to answer each questions</li>
-      <li>Refreshing the page will reset the Quiz</li>
+    <li>Correct Question gives you 10 points</li>
+    <li>Incorrect question gives you -10 points</li>
+    <li>You will have 10 sec to answer each questions</li>
+    <li>Refreshing the page will reset the Quiz</li>
   </ol>
   <h1 class="text-center">All the best!</h1>
   <div class="col-md-4 my-3">
     <label class="form-label">Enter your name:</label>
-    <input type="text" class="form-control">
+    <input #name type="text" class="form-control" />
   </div>
-  <button class="btn btn-primary btn-lg" routerLink="/question">Start the Quiz</button>
+  <button
+    class="btn btn-primary btn-lg"
+    routerLink="/question"
+    (click)="startQuiz()"
+  >
+    Start the Quiz
+  </button>
 </div>
