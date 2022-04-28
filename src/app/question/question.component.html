@@ -18,7 +18,7 @@
     <div class="d-flex justify-content-around py-3">
       <!-- score -->
       <div>
-        <h5>20 Points</h5>
+        <h5>{{ points }} Points</h5>
       </div>
       <!-- question remain -->
       <div>
@@ -26,7 +26,7 @@
       </div>
       <!-- timer -->
       <div>
-        <h5>60 sec ⏱️</h5>
+        <h5>{{ counter }} sec ⏱️</h5>
       </div>
     </div>
     <div class="progress mb-3">
@@ -42,7 +42,7 @@
     <!-- question -->
     <div>
       <div class="card">
-        <h3>What is your name?</h3>
+        <h3>{{ questionList[currentQuestion]?.questionText }}</h3>
       </div>
     </div>
     <!-- options -->
@@ -60,13 +60,13 @@
       </ol>
     </div>
     <div class="d-flex justify-content-between">
-      <button class="btn">
+      <button class="btn" (click)="previousQuestion()">
         <i class="fa-solid fa-chevron-left fa-2x text-primary"></i>
       </button>
       <button class="btn">
         <i class="fa-solid fa-arrows-rotate fa-2x text-primary"></i>
       </button>
-      <button class="btn">
+      <button class="btn" (click)="nextQuestion()">
         <i class="fa-solid fa-chevron-right fa-2x text-primary"></i>
       </button>
     </div>
