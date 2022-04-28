@@ -22,6 +22,7 @@ export class QuestionComponent implements OnInit {
   ngOnInit(): void {
     this.name = localStorage.getItem('name')!;
     this.getAllQuestions();
+    this.startCounter()
   }
 
   getAllQuestions(): void {
@@ -73,5 +74,12 @@ export class QuestionComponent implements OnInit {
     this.stopCounter();
     this.counter = 60;
     this.startCounter();
+  }
+
+  resetQuiz(): void {
+    this.resetCounter();
+    this.getAllQuestions();
+    this.points = 0;
+    this.currentQuestion = 0
   }
 }
