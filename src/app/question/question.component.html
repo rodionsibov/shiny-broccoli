@@ -15,7 +15,7 @@
         >
       </div>
     </div>
-    <ng-container>
+    <ng-container *ngIf="!isQuizCompleted">
       <div class="d-flex justify-content-around py-3">
         <!-- score -->
         <div>
@@ -81,9 +81,41 @@
         </button>
       </div>
     </ng-container>
-    <ng-container>
+
+    <ng-container *ngIf="isQuizCompleted">
       <div class="row d-flex justify-content-between">
-        <img src="" alt="">
+        <img
+          class="mx-auto mt-4"
+          style="width: 30%; object-fit: contain; min-width: 200px"
+          src="https://cdn-icons-png.flaticon.com/512/419/419952.png"
+          alt=""
+        />
+        <div class="text-center col-md-6">
+          <h3 class="fw-bold my-4 text-primary">
+            Congratulations! <br />You have completed the Quiz. <br />Below is
+            your result:
+          </h3>
+          <table class="table table-hover">
+            <tbody>
+              <tr>
+                <th scope="row">Total Question Attempted:</th>
+                <td>{{ questionList.length }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Total Correct Answered:</th>
+                <td>{{ correctAnswer }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Total Wrong Answered:</th>
+                <td>{{ inCorrectAnswer }}</td>
+              </tr>
+              <tr class="table-active">
+                <th scope="row">Your Score:</th>
+                <td>{{ points }} Points</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </ng-container>
   </div>
