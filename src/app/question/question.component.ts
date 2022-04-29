@@ -17,7 +17,7 @@ export class QuestionComponent implements OnInit {
   inCorrectAnswer: number = 0;
   interval$: any;
   progress: string = '0';
-  isQuizCompleted: boolean = true;
+  isQuizCompleted: boolean = false;
 
   constructor(private questionService: QuestionService) {}
 
