@@ -16,13 +16,14 @@ export class QuestionComponent implements OnInit {
   correctAnswer: number = 0;
   inCorrectAnswer: number = 0;
   interval$: any;
+  progress: string = '0';
 
   constructor(private questionService: QuestionService) {}
 
   ngOnInit(): void {
     this.name = localStorage.getItem('name')!;
     this.getAllQuestions();
-    this.startCounter()
+    this.startCounter();
   }
 
   getAllQuestions(): void {
@@ -44,10 +45,14 @@ export class QuestionComponent implements OnInit {
       this.points += 10;
       this.correctAnswer++;
       this.currentQuestion++;
+      this.resetCounter()
+      this.getProgressPercent();
     } else {
       this.points -= 10;
       this.inCorrectAnswer++;
       this.currentQuestion++;
+      this.resetCounter()
+      this.getProgressPercent();
     }
   }
 
@@ -80,6 +85,15 @@ export class QuestionComponent implements OnInit {
     this.resetCounter();
     this.getAllQuestions();
     this.points = 0;
-    this.currentQuestion = 0
+    this.currentQuestion = 0;
+    this.progress = '0';
+  }
+
+  getProgressPercent() {
+    this.progress = (
+      (this.currentQuestion / this.questionList.length) *
+      100
+    ).toString();
+    return this.progress;
   }
 }
