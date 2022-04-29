@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { QuestionComponent } from './question/question.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { ChangeBgDirective } from './change-bg.directive';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
     WelcomeComponent,
     QuestionComponent,
     HeaderComponent,
+    ChangeBgDirective,
   ],
   imports: [
     BrowserModule,

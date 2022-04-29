@@ -44,15 +44,19 @@ export class QuestionComponent implements OnInit {
     if (option.correct) {
       this.points += 10;
       this.correctAnswer++;
-      this.currentQuestion++;
-      this.resetCounter()
-      this.getProgressPercent();
+      setTimeout(() => {
+        this.currentQuestion++;
+        this.resetCounter();
+        this.getProgressPercent();
+      }, 1000);
     } else {
+      setTimeout(() => {
+        this.inCorrectAnswer++;
+        this.currentQuestion++;
+        this.resetCounter();
+        this.getProgressPercent();
+      }, 1000);
       this.points -= 10;
-      this.inCorrectAnswer++;
-      this.currentQuestion++;
-      this.resetCounter()
-      this.getProgressPercent();
     }
   }
 
